@@ -15,7 +15,6 @@ pids
 *.seed
 *.pid.lock
 
-.open-next
 
 .pnpm-store
 
