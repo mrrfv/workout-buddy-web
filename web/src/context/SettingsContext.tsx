@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 type Settings = {
   aiProvider: string;
+  aiEndpoint: string;
   aiModel: string;
   notificationSound: boolean;
   captureInterval: number;
@@ -11,9 +12,10 @@ type Settings = {
 
 const defaultSettings: Settings = {
   aiProvider: "Local Model",
+  aiEndpoint: "",
   aiModel: "",
-  notificationSound: false,
-  captureInterval: 1,
+  notificationSound: true,
+  captureInterval: 1.1,
   maxCountdown: 60,
 };
 

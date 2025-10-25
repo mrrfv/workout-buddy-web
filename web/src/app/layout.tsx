@@ -27,6 +27,8 @@ export default function RootLayout({
           <header className="bg-gray-700 p-2">
             <div className="flex flex-row flex-wrap pl-8 gap-2">
               <Link href="/" className="text-lg font-bold">Workout Buddy</Link>
+              <Link href={"/get-started"}>Get Started</Link>
+              <Link href={"/workout"}>Work Out</Link>
               <Link href={"/settings"}>Settings</Link>
             </div>
           </header>
