@@ -8,7 +8,7 @@ export function DynamicLandingButtons() {
 
     return (
         <>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center justify-center">
                 {settings.aiModel ? (
                     <>
                     <Link href="/workout" className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg font-bold mr-4">Work Out</Link>
