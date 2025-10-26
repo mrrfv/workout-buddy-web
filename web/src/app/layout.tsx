@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${lexend.variable} antialiased`}>
         <SettingsProvider>
-          <header className="bg-gray-700 p-2">
+          <header className="bg-white dark:bg-gray-700 p-2">
             <div className="flex flex-row flex-wrap pl-8 gap-2">
               <Link href="/" className="text-lg font-bold">Workout Buddy</Link>
               <Link href={"/get-started"}>Get Started</Link>

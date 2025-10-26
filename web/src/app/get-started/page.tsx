@@ -36,7 +36,7 @@ export default function GetStarted() {
 
     return (
         <>
-            <section className="flex min-h-screen flex-col items-center justify-center bg-gray-900">
+            <section className="flex min-h-screen flex-col items-center justify-center bg-gray-200 dark:bg-gray-900">
                 <h1 className="text-4xl font-bold my-4 text-center">Get Started with Workout Buddy</h1>
                 <p className="text-lg text-center max-w-xl mb-2 px-4">To begin, you need to set up Ollama - a local AI model server.</p>
                 <p className="text-lg text-center max-w-xl mb-8 px-4">Follow the instructions below to install and run Ollama on your machine.</p>

@@ -166,8 +166,8 @@ export default function Home() {
   }, [settings]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900">
-      <main className=" min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-gray-900 sm:items-start">
+    <div className="flex min-h-screen items-center justify-center bg-gray-200 dark:bg-gray-900">
+      <main className=" min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
         {!isCapturing ? (
           <div className='text-center'>
             <h1 className="text-4xl font-bold mb-8 text-black dark:text-white">Ready? Set?</h1>
