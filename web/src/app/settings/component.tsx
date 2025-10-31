@@ -23,7 +23,7 @@ export function SettingsComponent() {
             <div className="flex flex-row justify-between items-center mb-4">
                 <div>
                     <h2 className="text-lg font-medium">AI Provider</h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mr-2">Pick between locally hosted or external Ollama.</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mr-2">Pick between locally hosted Ollama or OpenRouter.</p>
                 </div>
                 <select
                     className="w-40 h-6 bg-white text-black"
@@ -32,6 +32,7 @@ export function SettingsComponent() {
                 >
                     <option>Local Model</option>
                     <option>Custom Endpoint</option>
+                    <option>OpenRouter</option>
                 </select>
             </div>
             {settings.aiProvider === "Custom Endpoint" && (
@@ -47,6 +48,23 @@ export function SettingsComponent() {
                         onChange={e => updateSetting("aiEndpoint", e.target.value)}
                     />
                 </div>
+            )}
+            {settings.aiProvider === "OpenRouter" && (
+                <>
+                <p className="text-sm text-red-600 dark:text-yellow-400 mb-2">OpenRouter and providers may train models on your screenshots. Please check your logging settings before continuing. It's advised to only share the tab containing the video with Workout Buddy instead of the whole screen.</p>
+                <div className="flex flex-row justify-between items-center mb-4">
+                    <div>
+                        <h2 className="text-lg font-medium">OpenRouter API Key</h2>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Your OpenRouter API key for accessing their models.</p>
+                    </div>
+                    <input
+                        type="text"
+                        className="w-40 h-6 bg-white text-black"
+                        value={settings.openRouterApiKey}
+                        onChange={e => updateSetting("openRouterApiKey", e.target.value)}
+                    />
+                </div>
+                </>
             )}
             <div className="flex flex-row justify-between items-center mb-4">
                 <div>

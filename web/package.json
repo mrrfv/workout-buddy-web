@@ -14,6 +14,7 @@
   "dependencies": {
     "@ai-sdk/openai-compatible": "^1.0.22",
     "@opennextjs/cloudflare": "^1.11.0",
+    "@openrouter/ai-sdk-provider": "^1.2.0",
     "ai": "^5.0.78",
     "ai-sdk-ollama": "^1.0.0",
     "next": "16.0.0",

@@ -7,6 +7,7 @@ import { createOllama } from 'ai-sdk-ollama';
 import z from 'zod';
 import { useSettings } from '@/context/SettingsContext';
 import useSound from 'use-sound';
+import { getAI } from '../helpers';
 
 export default function Home() {
   const [captures, setCaptures] = useState<string[]>([]);
@@ -16,7 +17,7 @@ export default function Home() {
   const {settings, setSettings} = useSettings();
   const videoRef = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
-  const ollamaRef = useRef(createOllama({ baseURL: settings.aiEndpoint }));
+  const aiRef = useRef(getAI(settings));
   const [playSound] = useSound("/ding.mp3");
 
   // Check if all settings are configured
@@ -85,7 +86,7 @@ export default function Home() {
     }));
 
     const result = await generateObject({
-      model: ollamaRef.current(settings.aiModel),
+      model: aiRef.current(settings.aiModel),
       schema: z.object({
         image_comparison_and_analysis: z.string().min(100),
         images_are_relevant: z.boolean(),
@@ -162,7 +163,7 @@ export default function Home() {
 
   // Recreate ollama client if settings change
   useEffect(() => {
-    ollamaRef.current = createOllama({ baseURL: settings.aiEndpoint });
+    aiRef.current = getAI(settings);
   }, [settings]);
 
   return (

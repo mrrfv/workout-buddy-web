@@ -1,10 +1,11 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-type Settings = {
+export type Settings = {
   aiProvider: string;
   aiEndpoint: string;
   aiModel: string;
+  openRouterApiKey: string;
   notificationSound: boolean;
   captureInterval: number;
   maxCountdown: number;
@@ -14,6 +15,7 @@ const defaultSettings: Settings = {
   aiProvider: "Local Model",
   aiEndpoint: "",
   aiModel: "",
+  openRouterApiKey: "",
   notificationSound: true,
   captureInterval: 1.1,
   maxCountdown: 60,
