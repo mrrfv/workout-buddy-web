@@ -107,7 +107,7 @@ export default function Home() {
     console.log("Response:", result.object);
 
     // If time_remaining_in_seconds is present, wait for that duration before showing a notification
-    if (result.object.time_remaining_in_seconds) {
+    if (result.object.time_remaining_in_seconds && result.object.time_remaining_in_seconds <= settings.maxCountdown) {
       // Calculate how much time has already passed
       const elapsedTime = Date.now() - taskStarted;
       const waitTime = Math.max(0, result.object.time_remaining_in_seconds * 1000 - elapsedTime);
