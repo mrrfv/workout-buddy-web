@@ -9,5 +9,11 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "workout-buddy.1998.ovh",
+      "custom_domain": true
+    }
+  ]
 }
