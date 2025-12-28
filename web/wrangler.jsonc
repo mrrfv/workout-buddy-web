@@ -1,19 +1,13 @@
 {
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "my-app",
-  "compatibility_date": "2025-03-25",
+  "name": "workout-buddy-web",
+  "compatibility_date": "2025-12-27",
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  },
-  "observability": {
-    "logs": {
-      "enabled": true,
-      "head_sampling_rate": 1,
-      "invocation_logs": true
-    }
   }
 }

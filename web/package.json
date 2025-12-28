@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai-compatible": "^1.0.22",
-    "@opennextjs/cloudflare": "^1.11.0",
+    "@opennextjs/cloudflare": "^1.14.7",
     "@openrouter/ai-sdk-provider": "^1.2.0",
     "ai": "^5.0.78",
     "ai-sdk-ollama": "^1.0.0",
@@ -33,6 +33,6 @@
     "eslint-config-next": "16.0.0",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "wrangler": "^4.45.0"
+    "wrangler": "^4.54.0"
   }
 }
