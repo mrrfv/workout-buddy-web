@@ -69,7 +69,7 @@ export function SettingsComponent() {
             <div className="flex flex-row justify-between items-center mb-4">
                 <div>
                     <h2 className="text-lg font-medium">AI Model</h2>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Sets the AI model to use (e.g. gemma3:4b).</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Sets the AI model to use (e.g. ministral-3:3b).</p>
                 </div>
                 <input
                     type="text"

@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { SettingsComponent } from '../settings/component';
 import { useState } from 'react';
 import { generateText } from 'ai';
-import { createOllama } from 'ai-sdk-ollama';
 import { useSettings } from '@/context/SettingsContext';
 import Link from 'next/link';
 import { getAI } from '../helpers';

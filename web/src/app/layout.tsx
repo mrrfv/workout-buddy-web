@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { SettingsProvider } from "../context/SettingsContext"; // <-- import
+import { SettingsProvider } from "../context/SettingsContext";
 
 const lexend = Lexend({
   subsets: ["latin"],

@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { system_prompt } from '../vars';
 import { generateObject } from 'ai';
-import { createOllama } from 'ai-sdk-ollama';
 import z from 'zod';
 import { useSettings } from '@/context/SettingsContext';
 import useSound from 'use-sound';
@@ -20,11 +19,10 @@ export default function Home() {
   const aiRef = useRef(getAI(settings));
   const [playSound] = useSound("/ding.mp3");
 
-  // Check if all settings are configured
-  const settingsConfigured = settings.aiProvider && settings.aiModel;
-
   // Start screen capture
   const startCapturing = async () => {
+    // Check if all settings are configured
+    const settingsConfigured = settings.aiProvider && settings.aiModel;
     if (!settingsConfigured) {
       alert("Please configure your settings before starting screen capture.");
       return;
