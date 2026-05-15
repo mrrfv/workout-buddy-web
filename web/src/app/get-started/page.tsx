@@ -34,7 +34,7 @@ export default function GetStarted() {
         <>
             <section className="flex min-h-screen flex-col items-center justify-center bg-gray-200 dark:bg-gray-900">
                 <h1 className="text-4xl font-bold my-4 text-center">Get Started with Workout Buddy</h1>
-                <p className="text-lg text-center max-w-xl mb-2 px-4">To begin, pick between using a local Ollama model (private and recommended) or OpenRouter.</p>
+                <p className="text-lg text-center max-w-xl mb-2 px-4">To begin, pick your favorite AI model provider.</p>
 
                 <div className="flex flex-row mb-8">
                     <button
@@ -49,9 +49,15 @@ export default function GetStarted() {
                     >
                         OpenRouter (cloud)
                     </button>
+                    <button
+                        className={`py-2 px-4 rounded-tr-lg font-bold ${settings.aiProvider === "OpenAI Compatible" ? "bg-blue-500 hover:bg-blue-600 text-white" : "bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"}`}
+                        onClick={() => setSettings(prev => ({ ...prev, aiProvider: "OpenAI Compatible" }))}
+                    >
+                        Custom OpenAI API (advanced)
+                    </button>
                 </div>
 
-                {settings.aiProvider != "OpenRouter" && (
+                {settings.aiProvider == "Local Model" && (
                     <>
                     <p className="text-lg text-center max-w-xl mb-8 px-4">Using a local Ollama model is recommended for privacy and performance. Follow the instructions below to install and run Ollama on your machine.</p>
                     <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-3xl w-full border border-gray-200 dark:border-gray-700">

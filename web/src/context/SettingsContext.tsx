@@ -5,7 +5,7 @@ export type Settings = {
   aiProvider: string;
   aiEndpoint: string;
   aiModel: string;
-  openRouterApiKey: string;
+  aiApiKey: string;
   notificationSound: boolean;
   captureInterval: number;
   maxCountdown: number;
@@ -15,7 +15,7 @@ const defaultSettings: Settings = {
   aiProvider: "Local Model",
   aiEndpoint: "",
   aiModel: "",
-  openRouterApiKey: "",
+  aiApiKey: "",
   notificationSound: true,
   captureInterval: 1.1,
   maxCountdown: 60,

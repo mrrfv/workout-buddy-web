@@ -31,15 +31,16 @@ export function SettingsComponent() {
                     onChange={e => updateSetting("aiProvider", e.target.value)}
                 >
                     <option>Local Model</option>
-                    <option>Custom Endpoint</option>
+                    <option>Custom Ollama Endpoint</option>
+                    <option>OpenAI Compatible</option>
                     <option>OpenRouter</option>
                 </select>
             </div>
-            {settings.aiProvider === "Custom Endpoint" && (
+            {(settings.aiProvider === "Custom Ollama Endpoint" || settings.aiProvider === "OpenAI Compatible") && (
                 <div className="flex flex-row justify-between items-center mb-4">
                     <div>
                         <h2 className="text-lg font-medium">AI Endpoint</h2>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Sets the custom endpoint for the Ollama API (e.g. https://ollama.yourdomain.com).</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Sets the custom endpoint for the API.</p>
                     </div>
                     <input
                         type="text"
@@ -49,19 +50,19 @@ export function SettingsComponent() {
                     />
                 </div>
             )}
-            {settings.aiProvider === "OpenRouter" && (
+            {(settings.aiProvider === "OpenRouter" || settings.aiProvider === "OpenAI Compatible") && (
                 <>
                 <p className="text-sm text-red-600 dark:text-yellow-400 mb-2">OpenRouter and providers may train models on your screenshots. Please check your logging settings before continuing. It's advised to only share the tab containing the video with Workout Buddy instead of the whole screen.</p>
                 <div className="flex flex-row justify-between items-center mb-4">
                     <div>
-                        <h2 className="text-lg font-medium">OpenRouter API Key</h2>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Your OpenRouter API key for accessing their models.</p>
+                        <h2 className="text-lg font-medium">API Key</h2>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">Your {settings.aiProvider} API key for accessing their models.</p>
                     </div>
                     <input
                         type="text"
                         className="w-40 h-6 bg-white text-black"
-                        value={settings.openRouterApiKey}
-                        onChange={e => updateSetting("openRouterApiKey", e.target.value)}
+                        value={settings.aiApiKey}
+                        onChange={e => updateSetting("aiApiKey", e.target.value)}
                     />
                 </div>
                 </>
