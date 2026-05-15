@@ -7,6 +7,7 @@ import z from 'zod';
 import { useSettings } from '@/context/SettingsContext';
 import useSound from 'use-sound';
 import { getAI } from '../helpers';
+import Streak from './Streak';
 
 export default function Home() {
   const [captures, setCaptures] = useState<string[]>([]);
@@ -166,12 +167,15 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-200 dark:bg-gray-900">
-      <main className=" min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
+      <main className="min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
         {!isCapturing ? (
-          <div className='text-center'>
-            <h1 className="text-4xl font-bold mb-8 text-black dark:text-white">Ready? Set?</h1>
-            <button className="bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded-lg font-bold" onClick={startCapturing}>Start Screen Capture</button>
-          </div>
+          <>
+            <div className='text-center mb-8'>
+              <h1 className="text-4xl font-bold mb-8 text-black dark:text-white">Ready? Set?</h1>
+              <button className="bg-blue-500 hover:bg-blue-600 py-2 px-4 rounded-lg font-bold" onClick={startCapturing}>Start Screen Capture</button>
+            </div>
+            <Streak></Streak>
+          </>
         ) : (
           <>
           <h1 className="text-4xl font-bold mb-8 text-black dark:text-white">Go!</h1>
