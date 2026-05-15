@@ -25,7 +25,7 @@ export default function Streak() {
     }, []);
 
     return <>
-    <div className="bg-amber-600 text-white p-4 rounded-lg mb-8 grid grid-cols-2">
+    <div className="bg-amber-700 text-white p-4 rounded-lg mb-8 grid grid-cols-2">
         <div>
             <p className="font-light text-sm tracking-wider uppercase">Streak</p>
             <p>Keep coming here every day to continue building good habits.</p>
